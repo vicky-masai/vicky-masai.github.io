@@ -1,94 +1,62 @@
-# Student Portfolio Analyser
+<h1 align="center">Hi 👋, I am Vicky Kumar</h1>
+<div align="center">
+ <img src="https://readme-typing-svg.herokuapp.com/?lines=Full+Stack+Web+Developer;Digital+Marketing+Expert;Quick+learner;Problem+Solver;&color=teal&center=true" />
+</div>
 
-## Maximum Marks - 34
+<img align="right" alt="Coding" width="400" src="https://media0.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif?cid=ecf05e47l5o174j0zohrwmjjk1zc2w82swqc0fk42xwjp33t&rid=giphy.gif&ct=g">
 
-```
- ✅ Submitted link is a github.io link - 1 mark
- ✅ Basic components (navbar, about, skills, projects, contact) present with respective IDs - 1 mark
- ✅ Navbar contains required elements with respective IDs - 1 mark
- ✅ Elements of the navbar are linked to the respective sections  - 5 marks
- ✅ Name is present - 1 mark
- ✅ Formal introduction is present - 1 mark
- ✅ About section is titled - 1 marks
- ✅ Professional photo is present - 1 marks
- ✅ Minimum of 4 samples of projects are present - 2 marks
- ✅ All project cards have an image, title, deployed link, repository link - 4 marks
- ✅ Each skills card has the corresponding image and name - 1 mark
- ✅ Links to GitHub and LinkedIn profiles are present - 2 marks
- ✅ Phone number is present - 1 mark
- ✅ Email address is present - 1 mark
- ✅ Resume buttons are present in the Resume section and the Home/About section - 2 marks
- ✅ Clicking on the resume button in the Resume section opens the link in a new tab and downloads the resume in PDF format - 2 marks
- ✅ Clicking on the resume button in the Home/About section section opens the link in a new tab and downloads the resume in PDF format - 2 marks
- ✅ GitHub calendar heatmap is present - 1 mark
- ✅ GitHub streak stats are present - 1 mark
- ✅ GitHub top languages card is present - 1 mark
- ✅ GitHub stats card is present - 1 mark
- ✅ Checked tech words in user about section - 1 mark
+[![](https://visitcount.itsvg.in/api?id=vicky-masai&icon=2&color=0)](https://visitcount.itsvg.in)
+### Summary
+With a solid foundation in web development technologies such as the MERN stack, HTML, CSS, and JavaScript, as well as expertise in SEO and online advertising. confident and ability to deliver high-quality, user-friendly, seo-friendly websites and digital marketing campaigns. well-rounded candidate with capability of handling a wide range of tasks and responsibilities in the tech industry.
 
-```
+# 💫 About Me:
+👯 I’m looking to collaborate on Good Tech Skills<br>
+🌱 I’m currently learning Full Stack Web Development<br>
+💬 Ask me about Coding...<br>
+👯 Interested in ai technologies...<br>
+👯 Self Motivated<br>
+⚡ Quick learner<br>
+💬 Ask me about Mongodb, express, React, Node, Javascript, HTML, CSS, DSA, Digital Marketing<br>
 
-#### You haven't been taught cypress to run the test cases locally, you can see the passed/ failed test cases and test errors on CP itself.
+📫 How to reach me: hajipurtech@gmail.com <br>
 
-#### CP will attempt to take screenshots of each component in your portfolio. You can view these screenshots in the "Screenshots" dropdown in the logs page. The marks allotted to you are independent of these.
+⚡ Want to Know More About Experience: [Check out My Resume](https://drive.google.com/file/d/19nt2wOZrPOHpv_2yf1ZL4WJj_HBJ0lmQ/view?usp=share_link)<br>
 
-## Some Rules to follow:-
+Want to know more about me? [Check out My Portfolio](https://vicky-masai.github.io/)
 
-- Before writing a single line of code please read the problem statement very carefully.
-- If you don't follow these rules you might not get any marks even if you do everything correctly.
-- Have a look at the TestErrors on the logs page and Google them if any of your test cases have failed to figure out what might have gone wrong.
+<h3 align="left">Connect with me:</h3>
+<ul>
+<li>
+  <a href="https://www.linkedin.com/in/vicky-paswan/" target="blank">Linkedin</a></li>
+  <li>
+    <a href="https://vicky-masai.github.io/" target="blank">Portfolio</a>
+  </li>
+</ul>
 
-## Problem Statement and Instructions:-
 
-- Create a portfolio with the following components using the following attributes:
-  - Navbar : id="nav-menu"
-  - Home section : id="home"
-  - About section : id="about" class="about section"
-  - Skills section : id="skills"
-  - Projects section : id="projects"
-  - Contact section : id="contact"
-- The elements within the navbar linked to the above 4 sections should have the following.
-  - Element linked to Home section : class="nav-link home"
-  - Element linked to About section : class="nav-link about"
-  - Element linked to Skills section : class="nav-link skills"
-  - Element linked to Projects section : class="nav-link projects"
-  - Element linked to Contact section : class="nav-link contact"
-  - Element linked to Resume : class="nav-link resume"
-- The following must be present within elements with the respective IDs:
-  - Name : id="user-detail-name"
-  - Formal introduction : id="user-detail-intro"
-- Contact elements must have the following IDs:
-  - GitHub profile link : id="contact-github"
-  - LinkedIn profile link : id="contact-linkedin"
-  - Phone number : id="contact-phone"
-  - Email address : id="contact-email"
-- The image linking your professional photo must have class="home-img"
-- Each project card in the Projects section should have class="project-card" and the following:
-  - Image of the project
-  - Title : class="project-title"
-  - Description : class="project-description"
-  - Tech stack used : class="project-tech-stack"
-  - Link to GitHub repository : class="project-github-link"
-  - Deployed link or video link : class="project-deployed-link"
-- Each skills card in the Skills section should have class="skills-card" and the following:
-  - Image : class="skills-card-img"
-  - Name : class="skills-card-name"
-- There must be two buttons for resume. Clicking on them should open the resume in a new tab and download it as a PDF. They must have the following IDs:
-  - For the button in the Resume section : id="resume-button-1"
-  - For the button in the Home/About section : id="resume-button-2"
-- If you're using anchor elements for the resume buttons, they must have the following IDs:
-  - For the button in the Resume section : id="resume-link-1"
-  - For the button in the Home/About section : id="resume-link-2"
-- For the GitHub calendar: class="react-activity-calendar" (the class is automatically included if you're using the react-github-calendar npm package)
-- The GitHub statistics images must have the following IDs:
-  - GitHub streak stats : id="github-streak-stats" [Link to refer : https://github-readme-streak-stats.herokuapp.com/demo/]
-  - GitHub top languages : id="github-top-langs" [Link to refer : https://github.com/anuraghazra/github-readme-stats]
-  - GitHub stats card : id="github-stats-card" [Link to refer : https://github.com/anuraghazra/github-readme-stats]
-- Do not repeat any of the above class names and ID names for any other element.
 
-#### General guidelines
 
-- The system on cp.masaischool.com may take between 1-20 minutes for responding,
-- so we request you to read the problem carefully and debug it before itself
-- we also request you not just submit it last minute
-- try to keep one submission at a time
+
+
+<h3>Languages & Tech <img src="https://camo.githubusercontent.com/beb64ff21c883e318e4f5db5231c2ba4175705bea1c9249e82a41ab375db4f75/68747470733a2f2f6d65646961322e67697068792e636f6d2f6d656469612f51737347456d706b79454f684243623765312f67697068792e6769663f6369643d656366303565343761306e336769316266716e74716d6f62386739616964316f796a327772336473336d67373030626c267269643d67697068792e676966" width="35"/></h3> 
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=flat-square&logo=express&logoColor=%2361DAFB) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat-square&logo=node.js&logoColor=white) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=react-router&logoColor=white) ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=flat-square&logo=redux&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat-square&logo=mongodb&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=flat-square&logo=Canva&logoColor=white)
+
+
+<br/>
+
+<h2 align="center" margin-top="20px"><i>GitHub's Analytics <img align="center" height="40" width="55" src="https://media1.giphy.com/media/3oiaLa13GUehTbgDfs/giphy.gif" /></i></h2>
+<hr>
+<p align="left">
+<a href="https://github.com/vicky-masai">
+  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com?user=vicky-masai&theme=github-dark-blue&date_format=j%20M%5B%20Y%5D"/>
+  <img width="48%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=vicky-masai&layout=compact&langs_count=8&theme=algolia"/>
+  <p align="center">
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=vicky-masai&show_icons=true&theme=algolia&include_all_commits=true&count_private=true" /></p>
+</a>
+</p>
+<hr>
+
+
+## 🏆 GitHub Trophies
+![](https://github-profile-trophy.vercel.app/?username=vicky-masai&theme=darkhub&no-frame=false&no-bg=false&margin-w=4)
