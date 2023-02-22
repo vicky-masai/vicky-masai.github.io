@@ -318,33 +318,26 @@
                 <!-- custom js file link  -->
                 <script src="js/script.js"></script>
                 <script>
-                    /*==================== GITHUB CALENDAR ====================*/
                     GitHubCalendar(".calendar", "vicky-masai", {
-                        responsive: true,
-                        global_stats: false,
-                        tooltips: true,
-                    });
+  responsive: true,
+  global_stats: false,
+  tooltips: true,
+});
 
-                    $(".counting").each(function () {
-                        var $this = $(this),
-                            countTo = $this.attr("data-count");
+document.querySelectorAll(".counting").forEach(function (element) {
+  var countTo = parseInt(element.getAttribute("data-count"));
+  var countNum = parseInt(element.innerText);
 
-                        $({ countNum: $this.text() }).animate(
-                            {
-                                countNum: countTo,
-                            },
-                            {
-                                duration: 3000,
-                                easing: "linear",
-                                step: function () {
-                                    $this.text(Math.floor(this.countNum));
-                                },
-                                complete: function () {
-                                    $this.text(this.countNum);
-                                },
-                            }
-                        );
-                    });
+  var animation = setInterval(function () {
+    if (countNum < countTo) {
+      countNum++;
+      element.innerText = countNum.toString();
+    } else {
+      clearInterval(animation);
+    }
+  }, 10);
+});
+
                 </script>
 </body>
 <script>
