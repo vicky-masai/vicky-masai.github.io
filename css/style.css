@@ -211,7 +211,7 @@ header .follow a:hover {
   padding: 0.5rem 0;
 }
 
-.home .content .text {
+.home .content #user-detail-intro {
   font-size: 1.7rem;
   color: #666;
   padding: 0.5rem 0;
