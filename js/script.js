@@ -11,14 +11,14 @@ window.onscroll = () => {
   header.classList.remove("active");
 };
 
-document.querySelectorAll("a").forEach((links) => {
-  links.onmouseenter = () => {
-    cursor1.classList.add("active");
-    cursor2.classList.add("active");
-  };
+// document.querySelectorAll("a").forEach((links) => {
+//   links.onmouseenter = () => {
+//     cursor1.classList.add("active");
+//     cursor2.classList.add("active");
+//   };
 
-  links.onmouseleave = () => {
-    cursor1.classList.remove("active");
-    cursor2.classList.remove("active");
-  };
-});
+//   links.onmouseleave = () => {
+//     cursor1.classList.remove("active");
+//     cursor2.classList.remove("active");
+//   };
+// });
