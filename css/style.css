@@ -170,6 +170,9 @@ header .follow a:hover {
     display: none;
 } */
 
+.project-tech-stack{
+  font-size: 13px;
+}
 .home {
   display: flex;
   align-items: center;
@@ -459,8 +462,16 @@ header .follow a:hover {
 }
 .box-container .icons{
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
+}
+.box-container .icons a{
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
+}
+.box-container .icons a:hover{
+border-color:orange ;
 }
 .box-container .box img{
   width: 100%;
