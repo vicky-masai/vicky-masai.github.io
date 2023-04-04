@@ -212,6 +212,8 @@ header .follow a:hover {
   font-size: 2.5rem;
   color: #111;
   padding: 0.5rem 0;
+  text-transform: capitalize;
+
 }
 
 .home .content #ab {
@@ -230,7 +232,9 @@ header .follow a:hover {
 .about .row-1 .image {
   flex: 1 1 25rem;
 }
-
+#home-img{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .about .row-1 .image img {
   height: 100%;
   width: 100%;
