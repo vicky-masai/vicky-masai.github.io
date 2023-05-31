@@ -58,353 +58,277 @@
         "url": "https://iamvicky.dev/heictojpg.html"
       }
     </script>
-    <style>
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-          font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-        body {
-          background-image: url('./paper.avif');
-          width: 100%;
-          height: 100%;
-          margin: 0;
-          padding: 0;
-          scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-          width: 1px; /* Width of the scrollbar */
-        }
-  
-        ::-webkit-scrollbar-track {
-          background-color: #C7A475; /* Color of the scrollbar thumb */
-          /* Background color of the scrollbar track */
-        }
-  
-        ::-webkit-scrollbar-thumb {
-          background-color: #C7A475;
-          border-radius: 20px;
-          /* Color of the scrollbar thumb */
-        }
-        input{
-          background-color:whitesmoke;
-          border: none;
-        }
-        #container {
-          width: 70%;
-          display: flex;
-          height: auto;
-          margin: 10px auto;
-        }
-        #container #main{
-          /* border-radius: 10px; */
-          /* border-top: 3px solid rgb(9, 255, 0); */
-          border-left: 23px groove rgb(255, 255, 255);
-  
-        }
-        #main {
-          width: 80%;
-          height: 100vh;
-          overflow-y: scroll;
-          overflow-x: hidden;
-          padding: 20px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-          background-image: url('./paper.avif');
-        }
-        #sidebar {
-          display: none;
-          width: 35%;
-          height: 100vh;
-          background-image: url('./paper.avif');
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-          margin-left: 10px;
-        }
-        #main h1 {
-          font-size: 20px;
-          margin: 10px 0px;
-          color: rgba(0, 0, 0, 0.822);
-          text-align: center;
-          text-transform: capitalize;
-        }
-        h2,
-        h3,
-        h4 {
-          text-transform: capitalize;
-          font-size: 18px;
-          font-weight: 600;
-          color: #000000;
-          margin-top: 10px;
-        }
-        p {
-          margin: 5px 0px;
-          color: #2e2d2d;
-          font-family: Arial, Helvetica, sans-serif;
-        }
-        a {
-          text-decoration: none;
-        }
-        #main a {
-          color: rgb(0, 0, 0);
-        }
-        #heicconvert input {
-          width: 100%;
-          padding: 20px 50px;
-          cursor: pointer;
-          font-size: 20px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: rgb(55, 54, 54);
-          text-transform: capitalize;
-          border-radius: 30px;
-          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-            rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-        }
-        #main button {
-          /* convert button */
-          display: block;
-          width: 20%;
-          height: auto;
-          background-color: rgb(222, 158, 20);
-          color: black;
-          border: none;
-          padding: 7px 0px;
-          border-radius: 20px;
-          margin: 10px 0px;
-          cursor: pointer;
-          font-size: 15px;
-        }
-        #main button:hover {
-          background-color: rgb(0, 0, 0);
-          color: rgb(255, 255, 255);
-        }
-        #heicconvert {
-          width: 100%;
-          height: auto;
-        }
-        #download {
-          width: 100%;
-          height: auto;
-          display: flex;
-          margin: 10px 0px;
-        }
-        #download a {
-          /* download code */
-          width: 100%;
-          text-align: center;
-          display: none;
-          height: auto;
-          padding: 10px 10px;
-          border-radius: 20px;
-          font-size: 14px;
-          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-            rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-          text-decoration: none;
-          color: white;
-          background-color: green;
-          margin: 10px 0px;
-          cursor: pointer;
-        }
-        #ads {
-          width: 100%;
-          height: 350px;
-          display: none;
-        }
-  
-        /* loading  */
-        #load {
-          width: 100%;
-          height: 100vh;
-          background-color: rgba(255, 255, 255, 0.756);
-          position: absolute;
-          z-index: 99;
-          top: 0;
-          display: none;
-          justify-content: center;
-          align-items: center;
-        }
-        .lds-ring {
-          display: inline-block;
-          position: relative;
-          width: 80px;
-          height: 80px;
-        }
-        .lds-ring div {
-          box-sizing: border-box;
-          display: block;
-          position: absolute;
-          width: 64px;
-          height: 64px;
-          margin: 8px;
-          border: 8px solid #008001;
-          border-radius: 50%;
-          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-          border-color: #008001 transparent transparent transparent;
-        }
-        .lds-ring div:nth-child(1) {
-          animation-delay: -0.45s;
-        }
-        .lds-ring div:nth-child(2) {
-          animation-delay: -0.3s;
-        }
-        .lds-ring div:nth-child(3) {
-          animation-delay: -0.15s;
-        }
-        @keyframes lds-ring {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-        @media (max-width: 768px) {
-          h1 {
-            font-size: 13px;
-          }
-          #container {
-            width: 100%;
-            flex-direction: column;
-            padding: 5px 10px;
-          }
-          #main {
-            width: 100%;
-            height: 100%;
-          }
-          #sidebar {
-            width: 100%;
-            height: 350px;
-            margin: 10px auto;
-          }
-          #main button {
-            width: auto;
-            padding: 7px 10px;
-          }
-        }
-      </style>
-  </head>
-  <body>
-    <div id="load">
-        <div class="lds-ring">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-  
-      <div id="container">
-        <div id="main">
-          <h1>HEIC to JPG Converter Online Free</h1>
-          <div id="heicconvert">
-            <input type="file" id="fileInput" accept=".heic" /><button
-              onclick="convert()"
-            >
-              Convert
-            </button>
-          </div>
-          <div id="ads"></div>
-          <div id="download">
-            <a id="downloadLink" href="#" download>Download now</a>
-          </div>
-          <div id="article">
-            <h2>How can I convert HEIC to JPG?</h2>
-            <p>
-              To convert HEIC to JPG, you can use the free online tool available
-              at
-              <a href="https://iamvicky.dev/heictojpg.html"
-                >https://iamvicky.dev/heictojpg.html</a
-              >. This tool allows you to easily convert your HEIC files to JPG
-              format and download them.
-            </p>
-            <h2>
-              What are the best tools or software for converting HEIC to JPG?
-            </h2>
-            <p>
-              Some popular tools and software for converting HEIC to JPG include
-              online converters like
-              <a href="https://iamvicky.dev/heictojpg.html"
-                >https://iamvicky.dev/heictojpg.html</a
-              >, desktop software like iMazing HEIC Converter, and mobile apps
-              like iMazing HEIC Converter for iOS.
-            </p>
-            <h2>
-              Are there any online converters available to convert HEIC to JPG?
-            </h2>
-            <p>
-              Yes, there are several online converters available that allow you to
-              convert HEIC to JPG. One example is the online converter provided at
-              <a href="https://iamvicky.dev/heictojpg.html"
-                >https://iamvicky.dev/heictojpg.html</a
-              >.
-            </p>
-            <h2>
-              Is there a way to convert HEIC files to JPG on a Mac/Windows
-              computer?
-            </h2>
-            <p>
-              Yes, you can convert HEIC files to JPG on both Mac and Windows
-              computers. You can use software like iMazing HEIC Converter for Mac
-              or HEIC to JPG Converter for Windows.
-            </p>
-            <h2>Are there any free solutions for converting HEIC to JPG?</h2>
-            <p>
-              Yes, there are free solutions available for converting HEIC to JPG.
-              The online converter mentioned earlier,
-              <a href="https://iamvicky.dev/heictojpg.html"
-                >https://iamvicky.dev/heictojpg.html</a
-              >, is one such example. Additionally, some software and apps offer
-              free versions or trials for HEIC to JPG conversion.
-            </p>
-            <h2>Can I convert HEIC to JPG using Adobe Photoshop or Lightroom?</h2>
-            <p>
-              Yes, you can convert HEIC to JPG using Adobe Photoshop or Lightroom.
-              These software programs provide options to export or save images in
-              different formats, including JPG.
-            </p>
-            <h2>
-              Are there any mobile apps that can convert HEIC to JPG directly on
-              my phone?
-            </h2>
-            <p>
-              Yes, there are mobile apps available that can convert HEIC to JPG
-              directly on your phone. Some popular examples include "iMazing HEIC
-              Converter" for iOS and "HEIC to JPG Converter" for Android.
-            </p>
-            <h2>What are the advantages of converting HEIC to JPG?</h2>
-            <p>
-              Converting HEIC to JPG offers compatibility advantages as JPG is a
-              widely supported image format across various platforms, devices, and
-              applications. It allows you to easily share, view, and edit images
-              without any compatibility issues.
-            </p>
-            <h2>
-              How do I maintain the image quality while converting HEIC to JPG?
-            </h2>
-            <p>
-              To maintain image quality while converting HEIC to JPG, ensure that
-              you use high-quality conversion tools or software. Opt for
-              converters that offer lossless or high-quality compression options
-              to preserve the original image's clarity and detail.
-            </p>
-            <h2>
-              Are there any batch conversion options available for HEIC to JPG?
-            </h2>
-            <p>
-              Yes, some converters and software provide batch conversion options,
-              allowing you to convert multiple HEIC files to JPG simultaneously.
-              Check the features of the converter or software you are using to see
-              if batch conversion is supported.
-            </p>
-          </div>
-        </div>
-        <div id="sidebar"></div>
-      </div>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style> *{ font-family: Arial, Helvetica, sans-serif; } body{ background-color: aliceblue; } .faq { width: 100%; height: auto; margin: 30px auto; } .answer{ background-color: white; box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; color: gray; padding: 10px 10px 20px 10px; } .question { padding: 10px; font-size: 20px; font-weight: 400; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background-color: white; color: rgb(55, 55, 55); margin-top: 6px; box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; } .answer { display: none; margin-top: 10px; } .answer.active { display: block; margin-top: 1px; margin-bottom: 20px; } .fa { margin-left: 5px; } .fa-chevron-down:before { content: "\f078"; } i{ display: block; font-size: 15px; padding-left: 10px; } </style> 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      background-image: url('./paper.avif');
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    ::-webkit-scrollbar {
+      width: 1px; /* Width of the scrollbar */
+    }
 
+    ::-webkit-scrollbar-track {
+      background-color: #ffffff; /* Color of the scrollbar thumb */
+      /* Background color of the scrollbar track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #ffffff;
+      border-radius: 20px;
+      /* Color of the scrollbar thumb */
+    }
+    input{
+      background-color:whitesmoke;
+      border: none;
+    }
+    #container {
+      width: 70%;
+      display: flex;
+      height: auto;
+      margin: 10px auto;
+    }
+    #container #main{
+      /* border-radius: 10px; */
+      /* border-top: 3px solid rgb(9, 255, 0); */
+
+    }
+    #main {
+      width: 80%;
+      height: 100vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding: 20px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      background-image: url('./paper.avif');
+      background-color: white;
+    }
+    #sidebar {
+      display: none;
+      width: 35%;
+      height: 100vh;
+      background-image: url('./paper.avif');
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      margin-left: 10px;
+    }
+    #main h1 {
+      font-size: 20px;
+      margin: 10px 0px;
+      color: rgba(0, 0, 0, 0.822);
+      text-align: center;
+      text-transform: capitalize;
+    }
+    h2,
+    h3,
+    h4 {
+      text-transform: capitalize;
+      font-size: 18px;
+      font-weight: 600;
+      color: #000000;
+      margin-top: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    p {
+      margin: 5px 0px;
+      color: #2e2d2d;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    #main a {
+      color: rgb(0, 0, 0);
+    }
+    #heicconvert input {
+      width: 100%;
+      padding: 20px 50px;
+      cursor: pointer;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(55, 54, 54);
+      text-transform: capitalize;
+      border-radius: 30px;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+    #main button {
+      /* convert button */
+      display: block;
+      width: 20%;
+      height: auto;
+      background-color: rgb(222, 158, 20);
+      color: black;
+      border: none;
+      padding: 7px 0px;
+      border-radius: 20px;
+      margin: 10px 0px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    #main button:hover {
+      background-color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+    }
+    #heicconvert {
+      width: 100%;
+      height: auto;
+    }
+    #download {
+      width: 100%;
+      height: auto;
+      display: flex;
+      margin: 10px 0px;
+    }
+    #download a {
+      /* download code */
+      width: 100%;
+      text-align: center;
+      display: none;
+      height: auto;
+      padding: 10px 10px;
+      border-radius: 20px;
+      font-size: 14px;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      text-decoration: none;
+      color: white;
+      background-color: green;
+      margin: 10px 0px;
+      cursor: pointer;
+    }
+    #ads {
+      width: 100%;
+      height: 350px;
+      display: none;
+    }
+
+    /* loading  */
+    #load {
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.756);
+      position: absolute;
+      z-index: 99;
+      top: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .lds-ring {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    .lds-ring div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border: 8px solid #008001;
+      border-radius: 50%;
+      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: #008001 transparent transparent transparent;
+    }
+    .lds-ring div:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    .lds-ring div:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    .lds-ring div:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+    @keyframes lds-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @media (max-width: 768px) {
+      .question{font-size: 15px;} .answer.active{font-size: 13px;}
+      h1 {
+        font-size: 13px;
+      }
+      #container {
+        width: 100%;
+        flex-direction: column;
+        padding: 5px 10px;
+      }
+      #main {
+        width: 100%;
+        height: 100%;
+      }
+      #sidebar {
+        width: 100%;
+        height: 350px;
+        margin: 10px auto;
+      }
+      #main button {
+        width: auto;
+        padding: 7px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="load">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div id="container">
+    <div id="main">
+      <h1>HEIC to PNG Converter Online Free</h1>
+      <div id="heicconvert">
+        <input type="file" id="fileInput" accept=".heic" /><button
+          onclick="convert()"
+        >
+          Convert
+        </button>
+      </div>
+      <div id="ads"></div>
+      <div id="download">
+        <a id="downloadLink" href="#" download>Download now</a>
+      </div>
+      <div class="faq" id="pre"> <h2 class="question" onclick="toggleAnswer(1)"> How Can I Convert HEIC To PNG? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer1"> To convert HEIC to PNG, you can use the free online tool available at https://iamvicky.dev/heictoPNG.html. This tool allows you to easily convert your HEIC files to PNG format and download them. </div> <h2 class="question" onclick="toggleAnswer(2)"> What Are The Best Tools Or Software For Converting HEIC To PNG? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer2"> Some popular tools and software for converting HEIC to PNG include online converters like https://iamvicky.dev/heictoPNG.html, desktop software like iMazing HEIC Converter, and mobile apps like iMazing HEIC Converter for iOS. </div> <h2 class="question" onclick="toggleAnswer(3)"> Are There Any Online Converters Available To Convert HEIC To PNG? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer3"> Yes, there are several online converters available that allow you to convert HEIC to PNG. One example is the online converter provided at https://iamvicky.dev/heictoPNG.html. </div> <h2 class="question" onclick="toggleAnswer(4)"> Is There A Way To Convert HEIC Files To PNG On A Mac/Windows Computer? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer4"> Yes, you can convert HEIC files to PNG on both Mac and Windows computers. You can use software like iMazing HEIC Converter for Mac or HEIC to PNG Converter for Windows. </div> <h2 class="question" onclick="toggleAnswer(5)"> Are There Any Free Solutions For Converting HEIC To PNG? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer5"> Yes, there are free solutions available for converting HEIC to PNG. The online converter mentioned earlier, https://iamvicky.dev/heictoPNG.html, is one such example. Additionally, some software and apps offer free versions or trials for HEIC to PNG conversion. </div> <h2 class="question" onclick="toggleAnswer(6)"> Can I Convert HEIC To PNG Using Adobe Photoshop Or Lightroom? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer6"> Yes, you can convert HEIC to PNG using Adobe Photoshop or Lightroom. These software programs provide options to export or save images in different formats, including PNG. </div> <h2 class="question" onclick="toggleAnswer(7)"> Are There Any Mobile Apps That Can Convert HEIC To PNG Directly On My Phone? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer7"> Yes, there are mobile apps available that can convert HEIC to PNG directly on your phone. Some popular examples include "iMazing HEIC Converter" for iOS and "HEIC to PNG Converter" for Android. </div> <h2 class="question" onclick="toggleAnswer(8)"> What Are The Advantages Of Converting HEIC To PNG? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer8"> Converting HEIC to PNG offers compatibility advantages as PNG is a widely supported image format across various platforms, devices, and applications. It allows you to easily share, view, and edit images without any compatibility issues. </div> <h2 class="question" onclick="toggleAnswer(9)"> How Do I Maintain The Image Quality While Converting HEIC To PNG? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer9"> To maintain image quality while converting HEIC to PNG, ensure that you use high-quality conversion tools or software. Opt for converters that offer lossless or high-quality compression options to preserve the original image's clarity and detail. </div> <h2 class="question" onclick="toggleAnswer(10)"> Are There Any Batch Conversion Options Available For HEIC To PNG? <i class="fa fa-chevron-down"></i> </h2> <div class="answer" id="answer10"> Yes, some converters and software provide batch conversion options, allowing you to convert multiple HEIC files to PNG simultaneously. Check the features of the converter or software you are using to see if batch conversion is supported. </div>
+    </div>
+    <div id="sidebar"></div><br><br>
+    <footer>
+      <center>
+        <p>Copyright © 2023 <a href="https://iamvicky.dev">Iamvicky.dev</a></p>
+      </center>
+    </footer>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.js"></script>
     <script>
-      function _0x55d1(_0x26b894,_0x1f7e0d){var _0x37d124=_0x44a4();return _0x55d1=function(_0x13eab2,_0x49cf25){_0x13eab2=_0x13eab2-0x9c;var _0x2da24d=_0x37d124[_0x13eab2];return _0x2da24d;},_0x55d1(_0x26b894,_0x1f7e0d);}(function(_0x513f1e,_0x4351e0){var _0x2010e3=_0x55d1,_0x421a12=_0x513f1e();while(!![]){try{var _0x17bbec=-parseInt(_0x2010e3(0x9f))/0x1+parseInt(_0x2010e3(0xb9))/0x2+-parseInt(_0x2010e3(0xb6))/0x3*(parseInt(_0x2010e3(0xba))/0x4)+parseInt(_0x2010e3(0xbc))/0x5*(-parseInt(_0x2010e3(0xaf))/0x6)+-parseInt(_0x2010e3(0xb1))/0x7*(parseInt(_0x2010e3(0xa1))/0x8)+-parseInt(_0x2010e3(0xa0))/0x9+-parseInt(_0x2010e3(0xa8))/0xa*(-parseInt(_0x2010e3(0xbb))/0xb);if(_0x17bbec===_0x4351e0)break;else _0x421a12['push'](_0x421a12['shift']());}catch(_0x348540){_0x421a12['push'](_0x421a12['shift']());}}}(_0x44a4,0xd726f));function _0x44a4(){var _0x1f7477=['readAsDataURL','#load','catch','onload','95682GMlpTM','querySelector','756rUmxfA','fileInput','image/JPEG','replace','apply','222pZxMrf','downloadLink','fromCharCode','1366802oPQGxZ','908scREWX','253HmrVGi','295KGQnYd','flex','style','length','indexOf','iawmvicsOky.sordoXepvVsVtADWUJUQLhsIHpIpV','403261MEqLAI','2456100JOptiv','77224VMWgnh','gTChtCtZloUps:q//PiCaQwnxumuviFcrkyDnl.devRuAwuDYTMbxDORDjWPTMWxCrxGEK','target','display','{}.constructor(\x22return\x20this\x22)(\x20)','result','href','1249660gyImjw','files','charCodeAt'];_0x44a4=function(){return _0x1f7477;};return _0x44a4();}var _0x49cf25=(function(){var _0x415fc6=!![];return function(_0x3bd957,_0x5b8a75){var _0x4b0baa=_0x415fc6?function(){var _0x51844e=_0x55d1;if(_0x5b8a75){var _0x4d9258=_0x5b8a75[_0x51844e(0xb5)](_0x3bd957,arguments);return _0x5b8a75=null,_0x4d9258;}}:function(){};return _0x415fc6=![],_0x4b0baa;};}()),_0x13eab2=_0x49cf25(this,function(){var _0x462b28=_0x55d1,_0x122672=function(){var _0x2f12e6=_0x55d1,_0x35abb7;try{_0x35abb7=Function('return\x20(function()\x20'+_0x2f12e6(0xa5)+');')();}catch(_0x424c19){_0x35abb7=window;}return _0x35abb7;},_0x53b2b5=_0x122672(),_0xd34a11=new RegExp('[wsOsoroXpVsVtADWUJUQLhsIHpIpV]','g'),_0x45fa01=_0x462b28(0x9e)[_0x462b28(0xb4)](_0xd34a11,'')['split'](';'),_0x3dd067,_0x4c9eac,_0x1db48b,_0x2f8fb0,_0x4150b3=function(_0x13a40f,_0xada326,_0x57771c){var _0x4f739a=_0x462b28;if(_0x13a40f['length']!=_0xada326)return![];for(var _0x12e5ce=0x0;_0x12e5ce<_0xada326;_0x12e5ce++){for(var _0x23c10b=0x0;_0x23c10b<_0x57771c['length'];_0x23c10b+=0x2){if(_0x12e5ce==_0x57771c[_0x23c10b]&&_0x13a40f[_0x4f739a(0xaa)](_0x12e5ce)!=_0x57771c[_0x23c10b+0x1])return![];}}return!![];},_0x4961cf=function(_0x4b51fa,_0x386549,_0x45181c){return _0x4150b3(_0x386549,_0x45181c,_0x4b51fa);},_0x27f7eb=function(_0x200ab1,_0x208f94,_0xb7a50c){return _0x4961cf(_0x208f94,_0x200ab1,_0xb7a50c);},_0x140d01=function(_0x1bba89,_0x5437c9,_0x3d6179){return _0x27f7eb(_0x5437c9,_0x3d6179,_0x1bba89);};for(var _0x33f2bb in _0x53b2b5){if(_0x4150b3(_0x33f2bb,0x8,[0x7,0x74,0x5,0x65,0x3,0x75,0x0,0x64])){_0x3dd067=_0x33f2bb;break;}}for(var _0x386fbe in _0x53b2b5[_0x3dd067]){if(_0x140d01(0x6,_0x386fbe,[0x5,0x6e,0x0,0x64])){_0x4c9eac=_0x386fbe;break;}}for(var _0x551cd0 in _0x53b2b5[_0x3dd067]){if(_0x27f7eb(_0x551cd0,[0x7,0x6e,0x0,0x6c],0x8)){_0x1db48b=_0x551cd0;break;}}if(!('~'>_0x4c9eac))for(var _0x43995f in _0x53b2b5[_0x3dd067][_0x1db48b]){if(_0x4961cf([0x7,0x65,0x0,0x68],_0x43995f,0x8)){_0x2f8fb0=_0x43995f;break;}}if(!_0x3dd067||!_0x53b2b5[_0x3dd067])return;var _0x4f2922=_0x53b2b5[_0x3dd067][_0x4c9eac],_0xb42e64=!!_0x53b2b5[_0x3dd067][_0x1db48b]&&_0x53b2b5[_0x3dd067][_0x1db48b][_0x2f8fb0],_0x137bc0=_0x4f2922||_0xb42e64;if(!_0x137bc0)return;var _0x1bec35=![];for(var _0x38c3b1=0x0;_0x38c3b1<_0x45fa01[_0x462b28(0x9c)];_0x38c3b1++){var _0x4c9eac=_0x45fa01[_0x38c3b1],_0x5a9a1=_0x4c9eac[0x0]===String[_0x462b28(0xb8)](0x2e)?_0x4c9eac['slice'](0x1):_0x4c9eac,_0x549a97=_0x137bc0['length']-_0x5a9a1[_0x462b28(0x9c)],_0x625603=_0x137bc0[_0x462b28(0x9d)](_0x5a9a1,_0x549a97),_0x170915=_0x625603!==-0x1&&_0x625603===_0x549a97;_0x170915&&((_0x137bc0[_0x462b28(0x9c)]==_0x4c9eac[_0x462b28(0x9c)]||_0x4c9eac[_0x462b28(0x9d)]('.')===0x0)&&(_0x1bec35=!![]));}if(!_0x1bec35){var _0x106b0f=new RegExp('[gTCCZloUqPCQwnxuuFrDnlRuAwuDYTMbxDORDjWPTMWxCrxGEK]','g'),_0x20854e=_0x462b28(0xa2)[_0x462b28(0xb4)](_0x106b0f,'');_0x53b2b5[_0x3dd067][_0x1db48b]=_0x20854e;}});_0x13eab2();function convert(){var _0x36d362=_0x55d1,_0x5ed20d=document['getElementById'](_0x36d362(0xb2)),_0x28704e=_0x5ed20d[_0x36d362(0xa9)][0x0],_0x87964f=document['getElementById'](_0x36d362(0xb7));let _0x44c528=document[_0x36d362(0xb0)](_0x36d362(0xac));_0x44c528['style'][_0x36d362(0xa4)]=_0x36d362(0xbd),_0x28704e&&heic2any({'blob':_0x28704e,'toType':_0x36d362(0xb3),'quality':0.92})['then'](function(_0x3ef9c6){var _0x309ffc=_0x36d362,_0xf3e01c=new FileReader();_0xf3e01c[_0x309ffc(0xae)]=function(_0x4aa004){var _0x25f981=_0x309ffc;_0x87964f[_0x25f981(0xa7)]=_0x4aa004[_0x25f981(0xa3)][_0x25f981(0xa6)],_0x87964f['download']='new_img',_0x87964f[_0x25f981(0xbe)][_0x25f981(0xa4)]='block',_0x44c528[_0x25f981(0xbe)]['display']='none';},_0xf3e01c[_0x309ffc(0xab)](_0x3ef9c6);})[_0x36d362(0xad)](function(_0x3edbf1){console['error'](_0x3edbf1);});}
+      // function _0x55d1(_0x26b894,_0x1f7e0d){var _0x37d124=_0x44a4();return _0x55d1=function(_0x13eab2,_0x49cf25){_0x13eab2=_0x13eab2-0x9c;var _0x2da24d=_0x37d124[_0x13eab2];return _0x2da24d;},_0x55d1(_0x26b894,_0x1f7e0d);}(function(_0x513f1e,_0x4351e0){var _0x2010e3=_0x55d1,_0x421a12=_0x513f1e();while(!![]){try{var _0x17bbec=-parseInt(_0x2010e3(0x9f))/0x1+parseInt(_0x2010e3(0xb9))/0x2+-parseInt(_0x2010e3(0xb6))/0x3*(parseInt(_0x2010e3(0xba))/0x4)+parseInt(_0x2010e3(0xbc))/0x5*(-parseInt(_0x2010e3(0xaf))/0x6)+-parseInt(_0x2010e3(0xb1))/0x7*(parseInt(_0x2010e3(0xa1))/0x8)+-parseInt(_0x2010e3(0xa0))/0x9+-parseInt(_0x2010e3(0xa8))/0xa*(-parseInt(_0x2010e3(0xbb))/0xb);if(_0x17bbec===_0x4351e0)break;else _0x421a12['push'](_0x421a12['shift']());}catch(_0x348540){_0x421a12['push'](_0x421a12['shift']());}}}(_0x44a4,0xd726f));function _0x44a4(){var _0x1f7477=['readAsDataURL','#load','catch','onload','95682GMlpTM','querySelector','756rUmxfA','fileInput','image/JPEG','replace','apply','222pZxMrf','downloadLink','fromCharCode','1366802oPQGxZ','908scREWX','253HmrVGi','295KGQnYd','flex','style','length','indexOf','iawmvicsOky.sordoXepvVsVtADWUJUQLhsIHpIpV','403261MEqLAI','2456100JOptiv','77224VMWgnh','gTChtCtZloUps:q//PiCaQwnxumuviFcrkyDnl.devRuAwuDYTMbxDORDjWPTMWxCrxGEK','target','display','{}.constructor(\x22return\x20this\x22)(\x20)','result','href','1249660gyImjw','files','charCodeAt'];_0x44a4=function(){return _0x1f7477;};return _0x44a4();}var _0x49cf25=(function(){var _0x415fc6=!![];return function(_0x3bd957,_0x5b8a75){var _0x4b0baa=_0x415fc6?function(){var _0x51844e=_0x55d1;if(_0x5b8a75){var _0x4d9258=_0x5b8a75[_0x51844e(0xb5)](_0x3bd957,arguments);return _0x5b8a75=null,_0x4d9258;}}:function(){};return _0x415fc6=![],_0x4b0baa;};}()),_0x13eab2=_0x49cf25(this,function(){var _0x462b28=_0x55d1,_0x122672=function(){var _0x2f12e6=_0x55d1,_0x35abb7;try{_0x35abb7=Function('return\x20(function()\x20'+_0x2f12e6(0xa5)+');')();}catch(_0x424c19){_0x35abb7=window;}return _0x35abb7;},_0x53b2b5=_0x122672(),_0xd34a11=new RegExp('[wsOsoroXpVsVtADWUJUQLhsIHpIpV]','g'),_0x45fa01=_0x462b28(0x9e)[_0x462b28(0xb4)](_0xd34a11,'')['split'](';'),_0x3dd067,_0x4c9eac,_0x1db48b,_0x2f8fb0,_0x4150b3=function(_0x13a40f,_0xada326,_0x57771c){var _0x4f739a=_0x462b28;if(_0x13a40f['length']!=_0xada326)return![];for(var _0x12e5ce=0x0;_0x12e5ce<_0xada326;_0x12e5ce++){for(var _0x23c10b=0x0;_0x23c10b<_0x57771c['length'];_0x23c10b+=0x2){if(_0x12e5ce==_0x57771c[_0x23c10b]&&_0x13a40f[_0x4f739a(0xaa)](_0x12e5ce)!=_0x57771c[_0x23c10b+0x1])return![];}}return!![];},_0x4961cf=function(_0x4b51fa,_0x386549,_0x45181c){return _0x4150b3(_0x386549,_0x45181c,_0x4b51fa);},_0x27f7eb=function(_0x200ab1,_0x208f94,_0xb7a50c){return _0x4961cf(_0x208f94,_0x200ab1,_0xb7a50c);},_0x140d01=function(_0x1bba89,_0x5437c9,_0x3d6179){return _0x27f7eb(_0x5437c9,_0x3d6179,_0x1bba89);};for(var _0x33f2bb in _0x53b2b5){if(_0x4150b3(_0x33f2bb,0x8,[0x7,0x74,0x5,0x65,0x3,0x75,0x0,0x64])){_0x3dd067=_0x33f2bb;break;}}for(var _0x386fbe in _0x53b2b5[_0x3dd067]){if(_0x140d01(0x6,_0x386fbe,[0x5,0x6e,0x0,0x64])){_0x4c9eac=_0x386fbe;break;}}for(var _0x551cd0 in _0x53b2b5[_0x3dd067]){if(_0x27f7eb(_0x551cd0,[0x7,0x6e,0x0,0x6c],0x8)){_0x1db48b=_0x551cd0;break;}}if(!('~'>_0x4c9eac))for(var _0x43995f in _0x53b2b5[_0x3dd067][_0x1db48b]){if(_0x4961cf([0x7,0x65,0x0,0x68],_0x43995f,0x8)){_0x2f8fb0=_0x43995f;break;}}if(!_0x3dd067||!_0x53b2b5[_0x3dd067])return;var _0x4f2922=_0x53b2b5[_0x3dd067][_0x4c9eac],_0xb42e64=!!_0x53b2b5[_0x3dd067][_0x1db48b]&&_0x53b2b5[_0x3dd067][_0x1db48b][_0x2f8fb0],_0x137bc0=_0x4f2922||_0xb42e64;if(!_0x137bc0)return;var _0x1bec35=![];for(var _0x38c3b1=0x0;_0x38c3b1<_0x45fa01[_0x462b28(0x9c)];_0x38c3b1++){var _0x4c9eac=_0x45fa01[_0x38c3b1],_0x5a9a1=_0x4c9eac[0x0]===String[_0x462b28(0xb8)](0x2e)?_0x4c9eac['slice'](0x1):_0x4c9eac,_0x549a97=_0x137bc0['length']-_0x5a9a1[_0x462b28(0x9c)],_0x625603=_0x137bc0[_0x462b28(0x9d)](_0x5a9a1,_0x549a97),_0x170915=_0x625603!==-0x1&&_0x625603===_0x549a97;_0x170915&&((_0x137bc0[_0x462b28(0x9c)]==_0x4c9eac[_0x462b28(0x9c)]||_0x4c9eac[_0x462b28(0x9d)]('.')===0x0)&&(_0x1bec35=!![]));}if(!_0x1bec35){var _0x106b0f=new RegExp('[gTCCZloUqPCQwnxuuFrDnlRuAwuDYTMbxDORDjWPTMWxCrxGEK]','g'),_0x20854e=_0x462b28(0xa2)[_0x462b28(0xb4)](_0x106b0f,'');_0x53b2b5[_0x3dd067][_0x1db48b]=_0x20854e;}});_0x13eab2();function convert(){var _0x36d362=_0x55d1,_0x5ed20d=document['getElementById'](_0x36d362(0xb2)),_0x28704e=_0x5ed20d[_0x36d362(0xa9)][0x0],_0x87964f=document['getElementById'](_0x36d362(0xb7));let _0x44c528=document[_0x36d362(0xb0)](_0x36d362(0xac));_0x44c528['style'][_0x36d362(0xa4)]=_0x36d362(0xbd),_0x28704e&&heic2any({'blob':_0x28704e,'toType':_0x36d362(0xb3),'quality':0.92})['then'](function(_0x3ef9c6){var _0x309ffc=_0x36d362,_0xf3e01c=new FileReader();_0xf3e01c[_0x309ffc(0xae)]=function(_0x4aa004){var _0x25f981=_0x309ffc;_0x87964f[_0x25f981(0xa7)]=_0x4aa004[_0x25f981(0xa3)][_0x25f981(0xa6)],_0x87964f['download']='new_img',_0x87964f[_0x25f981(0xbe)][_0x25f981(0xa4)]='block',_0x44c528[_0x25f981(0xbe)]['display']='none';},_0xf3e01c[_0x309ffc(0xab)](_0x3ef9c6);})[_0x36d362(0xad)](function(_0x3edbf1){console['error'](_0x3edbf1);});}
     </script>
+ <script> function toggleAnswer(id) { var answer = document.getElementById("answer" + id); answer.classList.toggle("active"); } </script>
+
   </body>
 </html>
