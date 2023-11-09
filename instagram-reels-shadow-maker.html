@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Instagram Reels Shadow Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Generate Instagram Reels-ready images with shadows using this handy tool."
+    />
+    <meta
+      name="keywords"
+      content="Instagram Reels, shadow maker, image tool, Instagram effects"
+    />
+    <meta name="author" content="Vicky Paswan" />
+    <meta property="og:title" content="Instagram Reels Shadow Maker" />
+    <meta
+      property="og:description"
+      content="Create stunning images with shadows for Instagram Reels with this easy-to-use tool."
+    />
+    <meta
+      property="og:image"
+      content="https://iamvicky.dev/images/vicky_paswan.jpeg"
+    />
+    <meta
+      property="og:url"
+      content="https://iamvicky.dev/instagram-reels-shadow-maker.html"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Instagram Reels Shadow Maker" />
+    <meta
+      name="twitter:description"
+      content="Generate Instagram Reels-ready images with shadows using this handy tool."
+    />
+    <meta
+      name="twitter:image"
+      content="https://iamvicky.dev/images/vicky_paswan.jpeg"
+    />
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+      }
+
+      #image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+      #prev {
+        /* image view div  */
+        width: 100%;
+        height: 90%;
+        padding: 25px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+        background-color: white;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      }
+
+      #selected-image {
+        width: auto;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        height: 80vh;
+        border-radius: 10px;
+        display: block; /* Ensures that the box shadow is applied properly */
+        margin: 0 auto; /* Centers the image horizontally */
+      }
+
+      #image-input {
+        display: none;
+      }
+
+      #download-btn {
+        margin-top: 10px;
+        padding: 8px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      article{
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        margin: auto;
+        font-size: 13px;
+        font-weight: 100;
+      }
+      h1,h2,h3{
+        font-size: 13px;
+        font-weight: 100;
+      }
+      p,li{
+font-size: 11px;
+      }
+      /*------------------------ responsive code for devices ----------------------*/
+      /* Small devices (less than or equal to 425px) */
+      @media (max-width: 425px) {
+        #prev {
+          /* image view div  */
+          width: 100%;
+          height: auto;
+          margin: 0px;
+        }
+        #selected-image {
+          width: 90%;
+          height: 90%;
+          border-radius: 10px;
+          display: block; /* Ensures that the box shadow is applied properly */
+          margin: 0 auto; /* Centers the image horizontally */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="image-container">
+      <div id="prev">
+        <img
+          id="selected-image"
+          src="/images/vicky_paswan.jpeg"
+          alt="Default Image"
+          onclick="openFileInput()"
+          style="
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+              rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          "
+        />
+
+        <input
+          type="file"
+          id="image-input"
+          accept="image/*"
+          onchange="displaySelectedImage(this)"
+        />
+      </div>
+      <!-- Add a new button for taking a screenshot -->
+      <button id="download-btn" onclick="takeScreenshot()">
+        Take Screenshot
+      </button>
+
+      <article>
+        <h1>Unleash the Power of Instagram Reels with our Shadow Maker Tool</h1>
+
+        <h2>Elevate Your Instagram Reels Game</h2>
+
+        <p>
+          In the fast-paced world of social media, making your content stand out
+          is essential. Instagram Reels have become a popular way to express
+          creativity, and now, you can take it a step further with our
+          innovative tool – the Instagram Reels Shadow Maker.
+        </p>
+
+        <h2>What is the Instagram Reels Shadow Maker?</h2>
+
+        <p>
+          Have you ever wanted to add that extra touch to your Reels images? Our
+          Shadow Maker tool is designed to do just that. It allows you to
+          effortlessly add shadows to your images, enhancing the visual appeal
+          and making your content pop.
+        </p>
+
+        <h2>Simple and User-Friendly</h2>
+
+        <p>
+          Using the Instagram Reels Shadow Maker is as easy as 1-2-3. Simply
+          upload your image, and with a click of a button, watch as shadows are
+          seamlessly integrated, giving your image a professional and polished
+          look. No more complex editing software or hours spent perfecting the
+          shadows – our tool does it all for you.
+        </p>
+
+        <h2>Why Shadows Matter on Instagram Reels</h2>
+
+        <p>
+          Shadows add depth and dimension to your images, making them visually
+          striking and attention-grabbing. Whether you're a content creator,
+          business owner, or just someone who loves sharing moments on
+          Instagram, our Shadow Maker tool ensures that your Reels images leave
+          a lasting impression.
+        </p>
+
+        <h2>Features of the Instagram Reels Shadow Maker</h2>
+
+        <ul>
+          <li>
+            <strong>Customizable Shadows:</strong> Adjust the intensity and
+            direction of the shadows to suit your style.
+          </li>
+          <li>
+            <strong>One-Click Download:</strong> Save time with our convenient
+            one-click download feature.
+          </li>
+          <li>
+            <strong>Mobile-Friendly:</strong> Use the tool on the go with its
+            responsive design for various devices.
+          </li>
+        </ul>
+
+        <h2>Boost Your Engagement</h2>
+
+        <p>
+          Studies show that visually appealing content garners more engagement.
+          By using the Instagram Reels Shadow Maker, you're not just enhancing
+          your images – you're boosting your engagement and making your mark in
+          the Instagram community.
+        </p>
+
+        <h2>Share Your Creativity</h2>
+
+        <p>
+          Our tool isn't just about shadows; it's about empowering you to share
+          your creativity effortlessly. The Instagram Reels Shadow Maker is a
+          game-changer for anyone who wants their content to stand out in a
+          crowded digital space.
+        </p>
+
+        <h2>Try it Now – Your Reels Deserve the Best</h2>
+
+        <p>
+          Don't settle for ordinary. Elevate your Instagram Reels with our
+          Shadow Maker tool. Try it now and discover the impact shadows can make
+          on your visual storytelling. Your audience deserves the best, and with
+          our tool, you can deliver just that.
+        </p>
+
+        <h2>Conclusion</h2>
+
+        <p>
+          In the world of Instagram Reels, where creativity knows no bounds,
+          make sure your content reflects your best self. The Instagram Reels
+          Shadow Maker is here to turn your ordinary images into extraordinary
+          ones. Embrace the power of shadows and let your Reels shine like never
+          before.
+        </p>
+      </article>
+    </div>
+
+    <script>
+      let selectedImageDataUrl = "";
+
+      function openFileInput() {
+        document.getElementById("image-input").click();
+      }
+
+      function displaySelectedImage(input) {
+        const file = input.files[0];
+
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            selectedImageDataUrl = e.target.result;
+            document.getElementById("selected-image").src =
+              selectedImageDataUrl;
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+      function takeScreenshot() {
+        // Get the #prev element
+        const prevElement = document.getElementById("prev");
+
+        // Use html2canvas to capture the screenshot
+        html2canvas(prevElement).then(function (canvas) {
+          // Create a download link
+          const a = document.createElement("a");
+          a.download = "vicky_developer.png";
+
+          // Create a new canvas to draw the image with styles
+          const newCanvas = document.createElement("canvas");
+          const newCtx = newCanvas.getContext("2d");
+
+          // Set canvas dimensions to match the original image
+          newCanvas.width = canvas.width;
+          newCanvas.height = canvas.height;
+
+          // Draw the captured screenshot on the new canvas
+          newCtx.drawImage(canvas, 0, 0);
+
+          // Add the shadows to create the same effect
+          newCtx.shadowColor = "rgba(0, 0, 0, 0.16)";
+          newCtx.shadowBlur = 3;
+          newCtx.shadowOffsetX = 0;
+          newCtx.shadowOffsetY = 3;
+
+          newCtx.shadowColor = "rgba(0, 0, 0, 0.23)";
+          newCtx.shadowBlur = 6;
+          newCtx.shadowOffsetX = 0;
+          newCtx.shadowOffsetY = 6;
+
+          // Convert the new canvas content to a data URL and set it as the href for the download link
+          a.href = newCanvas.toDataURL("image/png");
+
+          // Append the download link to the document
+          document.body.appendChild(a);
+
+          // Trigger a click on the download link
+          a.click();
+
+          // Remove the download link from the document
+          document.body.removeChild(a);
+        });
+      }
+    </script>
+  </body>
+</html>
