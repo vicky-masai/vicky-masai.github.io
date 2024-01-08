@@ -669,6 +669,10 @@ a{
 .skill-container {
   text-align: center;
 }
+.skill-container h4{
+  font-size: 15px;
+  text-align: center;
+}
 
 .github-images {
   /* border: 1px solid red; */
